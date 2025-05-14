@@ -73,6 +73,7 @@ a {
   flex: 1; /* each list takes half the bar */
   gap: 10rem;
   list-style: none;
+  padding-top: 20px;
 }
 .nav-left {
   justify-content: flex-end;
@@ -91,6 +92,7 @@ a {
 }
 .logo-nav {
   max-width: 100px;
+   padding-top: 20px;
 }
 
 /* Hamburger (mobile) */
@@ -250,19 +252,20 @@ header.hero::before {
   line-height: 1.55;
 }
 
-.underlineProperty{
-    display:flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+.underlineProperty {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
-.underlineProperty img{
-    width:200px;
+.underlineProperty img {
+  width: 200px;
 }
 
 /********  GALLERY  ********/
-.gallery-grid {
+
+/* .gallery-grid {
   display: grid;
   gap: 1rem;
 }
@@ -271,6 +274,7 @@ header.hero::before {
   object-fit: cover;
   height: 100%;
 }
+
 @media (min-width: 768px) {
   .gallery-grid {
     grid-template-columns: 2fr 1fr;
@@ -280,34 +284,150 @@ header.hero::before {
     gap: 1rem;
     grid-template-rows: repeat(3, 1fr);
   }
+} */
+
+.galleryFull {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
 }
+.subsection{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+      align-content: center;
+      text-align: center;
+}
+
+/********  GALLERY SLIDE SHOW THING ********/
+    .galleryg{
+     padding:5rem 15rem 0rem 15rem ;
+           background:var(--clr-primary);
+      display:flex;
+           color:#fff;
+      gap:1rem;
+      height:calc(100vh - 2*1rem);   /* fill viewport minus padding */
+    }
+
+    .herog{
+      flex:3 1 0;
+      overflow:hidden;            /* hide zoom overflow on small screens */
+      border-radius:6px;
+    }
+    .herog img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+    }
+
+    .thumb-strip{
+      flex:1 1 0;
+      display:flex;
+      flex-direction:column;
+      gap:var(--gap);
+      overflow-y:auto;
+      padding-right:4px;          /* room for custom scrollbar */
+    }
+    /* slim custom scrollbar (Chrome/Edge) */
+    .thumb-strip::-webkit-scrollbar{width:6px;}
+    .thumb-strip::-webkit-scrollbar-track{background:transparent;}
+    .thumb-strip::-webkit-scrollbar-thumb{
+      background:#ffd76888;border-radius:6px;
+    }
+
+    .thumb{
+      width:100%;
+      aspect-ratio:16/9;          /* keeps thumbs proportional */
+      cursor:pointer;
+      border:3px solid transparent;
+      border-radius:4px;
+      transition:border .2s ease;
+    }
+    .thumb img{
+      width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;
+    }
+    .thumb.active{border-color:#ffd768;}  /* gold highlight */
+
+    /* MOBILE  ----------------------------------------------------------- */
+    @media (max-width:768px){
+      .galleryg{flex-direction:column; padding:1rem ;}
+      .herog{flex:none;height:60vh;}
+      .thumb-strip{
+        flex:none;
+        flex-direction:row;
+        overflow-x:auto;
+        overflow-y:hidden;
+        height:auto;
+      }
+      .thumb{
+        width:110px;
+        aspect-ratio:auto;
+        flex:none;
+      }
+    }
 
 /********  AMENITIES  ********/
-.amenities {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.amenity {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--clr-primary);
-  text-align: center;
-  min-width: 120px;
-}
-.amenity i {
-  font-size: 2rem;
-  color: var(--clr-accent);
-  margin-bottom: 0.5rem;
+/* --------------  AMENITIES STRIP (unchanged) -------------- */
+#amenities{ background:#002a70; padding:2.5rem 1rem; text-align:center; }
+#amenities h2{ font-family:'Montserrat',sans-serif; font-weight:700;
+               letter-spacing:0.35rem; color:#fff;
+               font-size:clamp(1.25rem,2.5vw,2rem); margin-bottom:2.5rem; }
+
+.amenities-grid{
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:clamp(2rem,6vw,6rem);
+  padding-bottom: 100px;
 }
 
+/* --------------  NEW: image-based icons -------------- */
+.amenity{
+  display:flex; flex-direction:column; align-items:center;
+  width:180px;
+}
+
+/* icon image */
+.amenity img{
+  width:82px;              /* icon size → tweak as needed */
+  height:82px;
+  object-fit:contain;        /* keeps aspect ratio */
+  filter: drop-shadow(0 0 2px rgba(0,0,0,.2)); /* subtle depth */
+  margin-bottom:0.75rem;
+}
+
+.amenity span{
+  font-family:'Montserrat',sans-serif;
+  font-size:16px; font-weight:400; color:#fff;
+}
+
+/* optional: gold-tint monochrome icons */
+/* If your icons are solid black SVG/PNG and you’d like them gold: */
+/*
+.amenity img{
+  filter:brightness(0) saturate(100%) sepia(63%) hue-rotate(5deg)
+         saturate(600%) brightness(90%);
+}
+*/
+
+/* --------- small-screen tweak (unchanged) -------- */
+@media(max-width:480px){
+  .amenity{width:90px;}
+  .amenity img{width:2.6rem;height:2.6rem;}
+}
+
+
 /********  BRAND  ********/
+.bannerInner{
+    display:flex;
+    flex-direction:row;
+    
+}
 .brand-banner {
-  background: var(--clr-primary);
-  color: var(--clr-light);
+  background: var(--clr-light);
+  color: var(--clr-primary);
   display: flex;
   flex-wrap: wrap;
   align-items: center;

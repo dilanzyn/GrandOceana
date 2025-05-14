@@ -60,12 +60,18 @@
         <a href="#properties" class="btn">EXPLORE PROPERTIES</a>
 
         <div class="social-list">
-          <a href="#"><img src="./assets/facebookIcon.svg" alt="Facebook" /></a>
           <a href="#"
-            ><img src="./assets/instagramIcon.svg" alt="Instagram"
+            ><img src="./assets/icons/facebookIcon.svg" alt="Facebook"
           /></a>
-          <a href="#"><img src="./assets/linkedinIcon.svg" alt="LinkedIn" /></a>
-          <a href="#"><img src="./assets/whatsappIcon.svg" alt="WhatsApp" /></a>
+          <a href="#"
+            ><img src="./assets/icons/instagramIcon.svg" alt="Instagram"
+          /></a>
+          <a href="#"
+            ><img src="./assets/icons/linkedinIcon.svg" alt="LinkedIn"
+          /></a>
+          <a href="#"
+            ><img src="./assets/icons/whatsappIcon.svg" alt="WhatsApp"
+          /></a>
         </div>
       </div>
     </header>
@@ -149,63 +155,132 @@
     <section
       class="section"
       id="gallery"
-      style="background: var(--clr-primary); color: var(--clr-light)"
+      style="
+        background: var(--clr-primary);
+        color: var(--clr-light);
+        max-width: none;
+      "
     >
-      <h2 class="section-title" style="color: var(--clr-light)">
-        A Glimpse of Paradise
-      </h2>
-      <p style="text-align: center; margin-bottom: 1rem">
-        Our locations capture the beauty of seaside living.
-      </p>
+      <div class="galleryFull">
+        <div class="subsection">
+          <h2 class="section-title" style="color: var(--clr-light)">
+            A Glimpse of Paradise
+          </h2>
+          <p style="text-align: center; margin-bottom: 1rem">
+            Go through stunning views, modern interiors, and sun-kissed
+            beachfronts
+          </p>
+          <div class="subIcons">
+            <img src="./assets/subIcon.svg" alt="subicons" />
+          </div>
+        </div>
 
-      <div class="gallery-grid">
-        <img src="assets/gallery-large-placeholder.jpg" alt="Gallery large" />
+        <div class="galleryg">
+          <!-- BIG IMAGE -->
+          <div class="herog">
+            <img
+              id="herog-img"
+              src="./assets/gallery/photo.png"
+              alt="Featured photo"
+            />
+          </div>
 
-        <div class="gallery-col-small">
-          <img src="assets/gallery-small-1.jpg" alt="Gallery 1" />
-          <img src="assets/gallery-small-2.jpg" alt="Gallery 2" />
-          <img src="assets/gallery-small-3.jpg" alt="Gallery 3" />
+          <!-- THUMBNAILS -->
+          <div class="thumb-strip" id="thumb-strip">
+            <div class="thumb active" data-large="./assets/gallery/photo.png">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 1" />
+            </div>
+            <div class="thumb" data-large="./assets/gallery/photo.png">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 2" />
+            </div>
+            <div class="thumb" data-large="./assets/gallery/photo.png">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 3" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <div class="thumb" data-large="images/large-4.jpg">
+              <img src="./assets/gallery/photo.png" alt="thumbnail 4" />
+            </div>
+            <!-- ✨ Add as many thumbnails as you like by duplicating the block above -->
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ─────────────── AMENITIES ─────────────── -->
-    <section class="section" id="amenities">
-      <h2 class="section-title">Comfort at Your Doorstep</h2>
-      <div class="amenities">
+    <section
+      class="section"
+      id="amenities"
+      style="
+        background: var(--clr-primary);
+        color: var(--clr-light);
+        max-width: none;
+      "
+    >
+      <h2>COMFORT AT YOUR DOORSTEP</h2>
+
+      <div class="amenities-grid">
         <div class="amenity">
-          <i class="fas fa-wifi"></i>
-          <span>High-Speed Wi-Fi</span>
+          <img src="./assets/wifi.svg" alt="Free Wi-Fi icon" />
+          <span>Free WIFI</span>
         </div>
+
         <div class="amenity">
-          <i class="fas fa-swimmer"></i>
-          <span>Infinity Pool</span>
+          <img src="./assets/luxury.svg" alt="Luxury Interiors icon" />
+          <span>Luxury Interiors</span>
         </div>
+
         <div class="amenity">
-          <i class="fas fa-dumbbell"></i>
-          <span>Fitness Centre</span>
+          <img src="./assets/beach-icon.svg" alt="Beachfront icon" />
+          <span>Beachfront Properties</span>
         </div>
+
         <div class="amenity">
-          <i class="fas fa-concierge-bell"></i>
-          <span>24/7 Concierge</span>
+          <img src="./assets/exclusive.svg" alt="Exclusive villa icon" />
+          <span>Exclusive Villa Stay</span>
         </div>
       </div>
     </section>
 
     <!-- ─────────────── BRAND BANNER ─────────────── -->
     <section class="brand-banner" id="about">
-      <div class="brand-content">
-        <h2>Where Ocean Meets Elegance</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
-          delectus minima, possimus vel blanditiis.
-        </p>
-      </div>
-      <div class="brand-logo">
-        <img
-          src="assets/logo-gold-placeholder.svg"
-          alt="Grand Oceana gold logo"
-        />
+      <div class="bannerInner">
+        <div class="brand-content">
+          <h2>Where Ocean Meets Elegance</h2>
+          <p>
+            At Grand Oceana, we specialize in showcasing and managing exclusive
+            beachfront properties across Australia. Our mission is to bring you
+            closer to coastal living that blends luxury, location, and lifestyle
+          </p>
+        </div>
+        <div class="brand-logo">
+          <img
+            src="./assets/Grand oceana logo.svg"
+            alt="Grand Oceana gold logo"
+          />
+        </div>
       </div>
     </section>
 
@@ -274,6 +349,20 @@
         });
       }
       window.addEventListener("scroll", activateNav);
+
+      const herog = document.getElementById("herog-img");
+      const thumbs = document.querySelectorAll(".thumb");
+
+      thumbs.forEach((t) => {
+        t.addEventListener("click", () => {
+          // update main image
+          herog.src = t.dataset.large;
+
+          // update active state
+          document.querySelector(".thumb.active")?.classList.remove("active");
+          t.classList.add("active");
+        });
+      });
     </script>
   </body>
 </html>
