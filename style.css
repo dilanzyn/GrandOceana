@@ -83,7 +83,7 @@ a {
 } /* left-align right list */
 .navbar a {
   font-size: 0.95rem;
-  color: var(--clr-light);
+  color: var(--clr-accent);
   transition: color 0.25s ease;
 }
 .navbar a:hover,
@@ -135,7 +135,7 @@ a {
 
 /********  HERO  ********/
 header.hero {
-  height: 100vh;
+  height: 1013px;
   background: url("./assets/backgroundImg.svg") center/cover no-repeat;
   position: relative;
   display: flex;
@@ -155,6 +155,7 @@ header.hero::before {
   z-index: 1;
   max-width: 800px;
   padding-inline: 1.25rem;
+  padding-top: 100px;
 }
 .hero-title {
   font-size: clamp(2.5rem, 5vw + 1rem, 5.5rem);
@@ -216,7 +217,8 @@ header.hero::before {
 }
 
 .property-img img {
-  width: 100%;
+  width: 476px;
+  height: 436px;
   max-width: 600px; /* 594px in the spec */
   border-radius: 8px;
   object-fit: cover;
@@ -236,8 +238,8 @@ header.hero::before {
 .property-title {
   font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 0.75rem;
+  /* letter-spacing: 1px;
+  margin-bottom: 0.75rem; */
 }
 
 .property-desc-wrapper {
@@ -261,6 +263,7 @@ header.hero::before {
 
 .underlineProperty img {
   width: 200px;
+  padding-top: -10000px;
 }
 
 /********  GALLERY  ********/
@@ -420,67 +423,224 @@ header.hero::before {
 
 
 /********  BRAND  ********/
-.bannerInner{
-    display:flex;
-    flex-direction:row;
-    
-}
-.brand-banner {
-  background: var(--clr-light);
-  color: var(--clr-primary);
+.bannerInner {
+  max-width: 1200px;                    /* centres the block   */
+  margin: 0 auto;
+  padding: 4rem 2rem;                   /* generous air        */
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  gap: 2.5rem;
-  padding: 4rem 1.25rem;
+  gap: 3rem;                            /* space between cols  */
 }
+    
 .brand-content {
-  flex: 1 1 300px;
+  flex: 1;
+  max-width: 520px;
 }
+
+.brand-content h2 {
+  margin: 0 0 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: #002E6D;                       /* same navy           */
+}
+
+.brand-content p {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: clamp(.95rem, 2.1vw, 1.05rem);
+  line-height: 1.6;
+  color: #555;                          /* soft grey           */
+}
+
+/* — Right logo column — */
 .brand-logo {
-  flex: 0 0 230px;
+  flex: 0 0 340px;                      /* fixed-ish width     */
+  display: flex;
+  justify-content: center;
+}
+
+.brand-logo img {
+  width: 100%;                          /* scales elegantly    */
+  height: auto;
+}
+
+/* ====== Responsive tweak ====== */
+@media (max-width: 768px) {
+  .bannerInner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .brand-logo {
+    max-width: 240px;
+    margin-top: 2rem;
+  }
 }
 
 /********  CTA  ********/
+/* ===== CTA SECTION ===== */
 .cta {
-  background: var(--clr-accent);
-  color: var(--clr-primary);
+  background: #c49d46;                 /* gold backdrop                 */
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 3.5rem 1.25rem;
-}
-.cta-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.cta-card {
-  background: var(--clr-light);
-  color: var(--clr-primary);
-  padding: 2rem 2.5rem;
-  border-radius: 0.5rem;
-  min-width: 200px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  color: #fff;
 }
 
-/********  FOOTER  ********/
-footer {
-  background: var(--clr-primary);
-  color: var(--clr-light);
-  text-align: center;
-  padding: 2.5rem 1rem;
+.cta h3 {
+  margin: 0 0 .75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
 }
-footer .footer-social {
+
+.cta-sub {
+  margin: 0 0 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(.95rem, 2vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* --- card layout --- */
+.cta-cards {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
-footer .footer-social a {
-  font-size: 1.25rem;
-  transition: opacity 0.3s ease;
+
+.cta-card {
+  background: #ffffff;
+  width: 320px;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-footer .footer-social a:hover {
-  opacity: 0.7;
+
+.cta-icon {
+  font-size: 2rem;
+  color: #002e6d;
+  margin-bottom: 1rem;
 }
+
+/* keep existing .cta-icon rule — just add this inside/after it */
+.cta-icon img {
+  width: 48px;          /* adjust to taste */
+  height: auto;
+  display: block;
+}
+
+
+.cta-card h4 {
+  margin: 0 0 .75rem;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #002e6d;
+}
+
+.cta-desc {
+  margin: 0 0 1.5rem;
+  font-size: .85rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #555;
+  line-height: 1.4;
+}
+
+.cta-info {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #002e6d;
+  font-size: 1rem;
+}
+
+/* ---- responsive tweak ---- */
+@media (max-width: 768px) {
+  .cta-card {
+    width: 260px;
+  }
+}
+
+
+/********  FOOTER  ********/
+/* ===== FOOTER STYLE ===== */
+.site-footer {
+  background: #002e6d;        /* deep ocean blue               */
+  padding: 5rem 2rem 6rem;
+  text-align: center;
+  color: #cfcfcf;             /* soft grey text                 */
+}
+
+.footer-logo {
+  width: 214.1px;               /* adjust logo width if needed    */
+  height: 179px;
+  margin: 0 auto 3rem;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--clr-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover { color: #c49d46; } /* gold hover */
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-social img,
+.footer-social i {
+  width: 28px;                /* keep icons consistent          */
+  height: 28px;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(83%) sepia(29%)
+          saturate(5360%) hue-rotate(326deg) brightness(98%) contrast(88%);
+  /* → converts white SVG/PNG to gold-ish (#c49d46). Remove if your icons are
+       already gold-coloured */
+}
+
+.footer-tag {
+  padding-top: 20px;
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--clr-accent);            /* lighter grey for subtlety      */
+}
+
+/* — Mobile tweaks — */
+@media (max-width: 768px) {
+  .footer-nav { flex-wrap: wrap; gap: 1.25rem; }
+  .footer-social { gap: 1.25rem; }
+  .footer-logo { width: 180px; margin-bottom: 2.25rem; }
+}
+
