@@ -34,7 +34,7 @@ a {
 /********  Global helpers  ********/
 .section {
   padding: 4rem 1.25rem;
-  max-width: 1200px;
+  max-width: 75rem;
   margin-inline: auto;
 }
 
@@ -129,7 +129,7 @@ a {
   background: var(--clr-light);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .nav-left,
   .nav-right {
     display: none;
@@ -152,7 +152,7 @@ a {
   .logo-nav {
     margin-inline: auto;
   }
-}
+} */
 
 /********  HERO  ********/
 header.hero {
@@ -212,6 +212,77 @@ header.hero::before {
 .social-list a:hover {
   color: var(--clr-accent);
 }
+
+/* =========  MOBILE  (≤768 px)  ========= */
+@media (max-width: 768px) {
+
+  /* NAVBAR container tweaks */
+  .navbar{
+    padding: .75rem 1.25rem;
+    gap: 1rem;
+  }
+
+  /* Hamburger always visible on mobile */
+  .hamburger{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    cursor:pointer;
+    z-index:1100;               /* sits on top of sliding panel */
+  }
+  .hamburger span{
+    width:22px; height:2px;
+    background:var(--clr-light);
+    transition:transform .3s ease, opacity .3s ease;
+  }
+  /* morph to an “X” when .open is present */
+  .hamburger.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ opacity:0; }
+  .hamburger.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+  /* Collapsible panel (shared for both ULs) */
+  .nav-left,
+  .nav-right{
+    display:none;               /* hidden by default */
+    position:fixed;
+    top:70px; left:0;
+    width:100%;
+    flex-direction:column;
+    align-items:center;
+    gap:1.25rem;
+    background:rgba(1,4,160,.94);
+    padding:2rem 0;
+    animation:menuDrop .4s ease forwards;
+    flex: none;
+  }
+  .nav-left.show,
+  .nav-right.show{ display:flex; }
+
+  @keyframes menuDrop{
+    0%{ transform:translateY(-1rem); opacity:0; }
+    100%{ transform:translateY(0);   opacity:1; }
+  }
+
+  /* Keep logo centered */
+  .logo-nav{
+    max-width:90px;
+    margin-inline:auto;
+  }
+
+  /* HERO tweaks */
+  header.hero{
+    height:100vh;
+    padding-top:6rem;     /* leaves room for navbar */
+    background-position:auto;
+    background-size:cover;
+  }
+  .hero-title   { font-size:2.8rem; line-height:1.1; }
+  .hero-subtitle{ font-size:1.1rem; letter-spacing:4px; margin-top:.25rem; }
+  .hero-text    { font-size:.95rem; max-width:90%; margin-bottom:2rem; }
+  .btn          { padding:.65rem 1.5rem; font-size:.9rem; }
+  .social-list  { gap:1.1rem; margin-top:2rem; }
+}
+
 
 /********  PROPERTIES  ********/
 /* ――― properties two-column layout ――― */
