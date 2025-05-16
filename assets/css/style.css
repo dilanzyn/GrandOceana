@@ -157,7 +157,7 @@ a {
 /********  HERO  ********/
 header.hero {
   height: 1013px;
-  background: url('/GrandOceana/assets/images/background.svg') center / cover no-repeat;
+  background: url('./assets/images/background.svg') center / cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
