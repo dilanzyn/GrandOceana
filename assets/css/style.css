@@ -38,19 +38,33 @@ a {
   margin-inline: auto;
 }
 
-.btn {
+.button {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  border: 2px solid var(--clr-accent);
-  color: var(--clr-accent);
   font-weight: 600;
   border-radius: 2px;
   letter-spacing: 0.05em;
   transition: background 0.3s ease, color 0.3s ease;
 }
-.btn:hover {
+
+.button-gold {
+  border: 2px solid var(--clr-accent);
+  color: var(--clr-accent);
+}
+
+.button-gold:hover {
   background: var(--clr-accent);
   color: var(--clr-primary);
+}
+
+.button-blue {
+  background: var(--clr-primary);
+  color: var(--clr-light);
+}
+
+.button-blue:hover {
+  background: var(--clr-accent);
+  color: var(--clr-light);
 }
 
 /********  NAVBAR  ********/
@@ -64,7 +78,7 @@ a {
   gap: 10rem;
   padding: 0.5 3.5rem;
   /* background: rgba(1, 4, 160, 0.2); subtle overlay */
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
 }
 .nav-left,
 .nav-right {
@@ -156,15 +170,18 @@ a {
 
 /********  HERO  ********/
 header.hero {
-  height: 1013px;
-  background: url('/GrandOceana/assets/images/background.svg') center / cover no-repeat;
+  height: 80vh;
+  background: url("/assets/images/background.svg") center / cover
+    no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--clr-light);
+  padding: 4rem 2rem;
 }
+
 header.hero::before {
   content: "";
   position: absolute;
