@@ -23,57 +23,61 @@
   </head>
   <body>
     <!-- ─────────────── NAVBAR ─────────────── -->
-    <nav class="navbar">
-      <ul class="nav-left" id="nav-left">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
+    <div class="home-wrapper">
+      <nav class="navbar">
+        <ul class="nav-left" id="nav-left">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
 
-      <!-- Brand logo -->
+        <!-- Brand logo -->
 
-      <img
-        src="./assets/icons/logo.svg"
-        alt="Grand Oceana logo"
-        class="logo-nav"
-      />
+        <img
+          src="./assets/icons/logo.svg"
+          alt="Grand Oceana logo"
+          class="logo-nav"
+        />
 
-      <ul class="nav-right" id="nav-right">
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
+        <ul class="nav-right" id="nav-right">
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
 
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </nav>
-
-    <!-- ─────────────── HERO ─────────────── -->
-    <header class="hero" id="home">
-      <div class="hero-inner">
-        <h1 class="hero-title">OCEAN FRONT</h1>
-        <h2 class="hero-subtitle">LUXURY REDEFINED</h2>
-        <p class="hero-text">
-          Luxury beachside properties with breathtaking views, modern design,
-          and ultimate comfort.
-        </p>
-        <a href="#properties" class="button button-gold">EXPLORE PROPERTIES</a>
-
-        <div class="social-list">
-          <a href="#"
-            ><img src="./assets/icons/facebook.svg" alt="Facebook"
-          /></a>
-          <a href="#"
-            ><img src="./assets/icons/instagram.svg" alt="Instagram"
-          /></a>
-          <a href="#"
-            ><img src="./assets/icons/linkedIn.svg" alt="LinkedIn"
-          /></a>
-          <a href="#"
-            ><img src="./assets/icons/whatsapp.svg" alt="WhatsApp"
-          /></a>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
         </div>
-      </div>
-    </header>
+      </nav>
+
+      <!-- ─────────────── HERO ─────────────── -->
+      <header class="hero" id="home">
+        <div class="hero-inner">
+          <h1 class="hero-title">OCEAN FRONT</h1>
+          <h2 class="hero-subtitle">LUXURY REDEFINED</h2>
+          <p class="hero-text">
+            Luxury beachside properties with breathtaking views, modern design,
+            and ultimate comfort.
+          </p>
+          <a href="#properties" class="button button-gold"
+            >EXPLORE PROPERTIES</a
+          >
+
+          <div class="social-list">
+            <a href="#"
+              ><img src="./assets/icons/facebook.svg" alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img src="./assets/icons/instagram.svg" alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img src="./assets/icons/linkedIn.svg" alt="LinkedIn"
+            /></a>
+            <a href="#"
+              ><img src="./assets/icons/whatsapp.svg" alt="WhatsApp"
+            /></a>
+          </div>
+        </div>
+      </header>
+    </div>
 
     <!-- ─────────────── PROPERTIES ─────────────── -->
     <section class="section" id="properties">
@@ -162,191 +166,202 @@
       </div>
     </section>
 
-    <!-- ─────────────── GALLERY ─────────────── -->
-    <section
-      class="section"
-      id="gallery"
-      style="
-        background: var(--clr-primary);
-        color: var(--clr-light);
-        max-width: none;
-      "
-    >
-      <div class="galleryFull">
-        <div class="subsection">
-          <h2 class="section-title" style="color: var(--clr-light)">
-            A GLIMPSE OF PARADISE
-          </h2>
-          <p
-            style="
-              text-align: center;
-              margin-bottom: 1rem;
-              font-weight: 400;
-              size: 20px;
-            "
-          >
-            Go through stunning views, modern interiors, and sun-kissed
-            beachfronts
-          </p>
-          <div class="subIcons">
-            <img src="./assets/icons/change_property.svg" alt="subicons" />
-          </div>
-        </div>
-
-        <div class="galleryg">
-          <!-- BIG IMAGE -->
-          <div class="herog">
-            <img
-              id="herog-img"
-              src="./assets/images/property/margate_sands/HR1.jpg"
-              alt="Featured photo"
-            />
-          </div>
-
-          <!-- THUMBNAILS -->
-          <div class="thumb-strip" id="thumb-strip">
-            <div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR1.jpg"
+    <div style="background: #002366">
+      <!-- ─────────────── GALLERY ─────────────── -->
+      <section
+        class="section"
+        id="gallery"
+        style="
+          background: var(--clr-primary);
+          color: var(--clr-light);
+          max-width: none;
+        "
+      >
+        <div class="galleryFull">
+          <div class="subsection">
+            <h2 class="section-title" style="color: var(--clr-light)">
+              A GLIMPSE OF PARADISE
+            </h2>
+            <p
+              style="
+                text-align: center;
+                margin-bottom: 1rem;
+                font-weight: 400;
+                size: 20px;
+              "
             >
+              Go through stunning views, modern interiors, and sun-kissed
+              beachfronts
+            </p>
+            <div class="subIcons">
+              <img src="./assets/icons/change_property.svg" alt="subicons" />
+            </div>
+          </div>
+
+          <div class="galleryg">
+            <!-- BIG IMAGE -->
+            <div class="herog">
               <img
+                id="herog-img"
                 src="./assets/images/property/margate_sands/HR1.jpg"
-                alt="thumbnail 1"
+                alt="Featured photo"
               />
             </div>
-            <div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR2.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR2.jpg"
-                alt="thumbnail 1"
-              />
+
+            <!-- THUMBNAILS -->
+            <div class="thumb-strip" id="thumb-strip">
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR1.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR1.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR2.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR2.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR3.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR3.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR4.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR4.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR5.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR5.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR6.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR6.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR7.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR7.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR8.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR8.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR9.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR9.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR10.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR10.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR11.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR11.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <div
+                class="thumb active"
+                data-large="./assets/images/property/margate_sands/HR12.jpg"
+              >
+                <img
+                  src="./assets/images/property/margate_sands/HR12.jpg"
+                  alt="thumbnail 1"
+                />
+              </div>
+              <!-- ✨ Add as many thumbnails as you like by duplicating the block above -->
             </div>
-            <div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR3.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR3.jpg"
-                alt="thumbnail 1"
-              />
-            </div>
-            <div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR4.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR4.jpg"
-                alt="thumbnail 1"
-              />
-            </div>
-            <div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR5.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR5.jpg"
-                alt="thumbnail 1"
-              />
-            </div>
-            <div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR6.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR6.jpg"
-                alt="thumbnail 1"
-              />
-            </div><div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR7.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR7.jpg"
-                alt="thumbnail 1"
-              />
-            </div><div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR8.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR8.jpg"
-                alt="thumbnail 1"
-              />
-            </div><div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR9.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR9.jpg"
-                alt="thumbnail 1"
-              />
-            </div><div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR10.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR10.jpg"
-                alt="thumbnail 1"
-              />
-            </div><div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR11.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR11.jpg"
-                alt="thumbnail 1"
-              />
-            </div><div
-              class="thumb active"
-              data-large="./assets/images/property/margate_sands/HR12.jpg"
-            >
-              <img
-                src="./assets/images/property/margate_sands/HR12.jpg"
-                alt="thumbnail 1"
-              />
-            </div>
-            <!-- ✨ Add as many thumbnails as you like by duplicating the block above -->
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ─────────────── AMENITIES ─────────────── -->
-    <section
-      class="section"
-      id="amenities"
-      style="
-        background: var(--clr-primary);
-        color: var(--clr-light);
-        max-width: none;
-      "
-    >
-      <h2>COMFORT AT YOUR DOORSTEP</h2>
+      <!-- ─────────────── AMENITIES ─────────────── -->
+      <section
+        class="section"
+        id="amenities"
+        style="
+          background: var(--clr-primary);
+          color: var(--clr-light);
+          max-width: none;
+        "
+      >
+        <h2>COMFORT AT YOUR DOORSTEP</h2>
 
-      <div class="amenities-grid">
-        <div class="amenity">
-          <img src="./assets/icons/wifi.svg" alt="Free Wi-Fi icon" />
-          <span>Free WIFI</span>
+        <div class="amenities-grid">
+          <div class="amenity">
+            <img src="./assets/icons/wifi.svg" alt="Free Wi-Fi icon" />
+            <span>Free WIFI</span>
+          </div>
+
+          <div class="amenity">
+            <img
+              src="./assets/icons/interior.svg"
+              alt="Luxury Interiors icon"
+            />
+            <span>Luxury Interiors</span>
+          </div>
+
+          <div class="amenity">
+            <img src="./assets/icons/beach.svg" alt="Beachfront icon" />
+            <span>Beachfront Properties</span>
+          </div>
+
+          <div class="amenity">
+            <img src="./assets/icons/villa.svg" alt="Exclusive villa icon" />
+            <span>Exclusive Villa Stay</span>
+          </div>
         </div>
-
-        <div class="amenity">
-          <img src="./assets/icons/interior.svg" alt="Luxury Interiors icon" />
-          <span>Luxury Interiors</span>
-        </div>
-
-        <div class="amenity">
-          <img src="./assets/icons/beach.svg" alt="Beachfront icon" />
-          <span>Beachfront Properties</span>
-        </div>
-
-        <div class="amenity">
-          <img src="./assets/icons/villa.svg" alt="Exclusive villa icon" />
-          <span>Exclusive Villa Stay</span>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- ─────────────── BRAND BANNER ─────────────── -->
     <section class="brand-banner" id="about">
@@ -415,8 +430,9 @@
               Friday during regular working<br />
               hours
             </p>
-            <p class="cta-info">Century 21, 99-101 Landsborough Ave, Scarborough QLD 4020
-</p>
+            <p class="cta-info">
+              Century 21, 99-101 Landsborough Ave, Scarborough QLD 4020
+            </p>
           </div>
         </div>
       </div>
@@ -466,7 +482,7 @@
 
     <!-- ─────────────── JS ─────────────── -->
     <script>
-            /* Mobile nav toggle */
+      /* Mobile nav toggle */
       const hamburger = document.getElementById("hamburger");
       const navLeft = document.getElementById("nav-left");
       const navRight = document.getElementById("nav-right");
