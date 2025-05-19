@@ -220,7 +220,7 @@ a {
 header.hero {
   height: 100vh;
   height: 100dvh;
-  background: url("/assets/images/background.svg") center / cover no-repeat;
+  background: url("/GrandOceana/images/background.svg") center / cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
