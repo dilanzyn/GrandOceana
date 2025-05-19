@@ -4,6 +4,7 @@
   --clr-accent: #c6a964; /* Elegant gold  */
   --clr-light: #ffffff;
   --clr-dark: #000a2e;
+  scroll-behavior: smooth;
 }
 
 *,
