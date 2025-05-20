@@ -465,8 +465,8 @@ header.hero {
   }
 }
 
+/* GALLERY */
 
-/******** GALLERY ********/
 .galleryFull {
   display: flex;
   flex-direction: column;
@@ -490,27 +490,25 @@ header.hero {
 .galleryg {
   display: flex;
   gap: 1rem;
-  /* padding: 6rem 15rem 10rem 15rem; */
   padding: 6rem 4rem 8rem 4rem;
   background: var(--clr-primary);
   color: #fff;
-  max-height: 600px;
-  height: 70vh;
   max-width: 1200px;
+  height: 70vh;
+  max-height: 600px;
 }
 
 .herog {
   flex: 3 1 0;
   position: relative;
   border-radius: 6px;
-  height: 100%; /* Fill parent's height */
-  max-height: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
 .herog img {
   width: 100%;
-  height: 100%; /* fill container */
+  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -522,27 +520,36 @@ header.hero {
   flex-direction: column;
   gap: 0.75rem;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 4px;
-  height: 100%; /* Match herog height */
+  height: 100%;
   max-height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,215,104,0.6) rgba(255,255,255,0.1);
 }
 
 .thumb-strip::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .thumb-strip::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
 }
 
 .thumb-strip::-webkit-scrollbar-thumb {
-  background: #ffd76888;
-  border-radius: 6px;
+  background: rgba(255,215,104,0.6);
+  border-radius: 4px;
+}
+
+.thumb-strip::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,215,104,0.8);
 }
 
 .thumb {
+  flex: none;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3/2;
   cursor: pointer;
   border: 3px solid transparent;
   border-radius: 4px;
@@ -561,61 +568,80 @@ header.hero {
   border-color: var(--clr-primary);
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
+/* Tablet (481px–1024px) */
+@media (max-width: 1024px) and (min-width: 481px) {
   .galleryg {
     flex-direction: column;
     padding: 3rem 2rem 4rem 2rem;
-    height: auto; /* allow natural height */
-    min-height: 60vh; /* ensure enough height */
+    height: auto;
+    min-height: 60vh;
   }
-
   .herog {
     height: 60vh;
     max-height: 60vh;
   }
-
   .thumb-strip {
-    flex: none;
     flex-direction: row;
-    height: auto;
     overflow-x: auto;
     overflow-y: hidden;
     padding-right: 0;
+    padding-bottom: 0.5rem;
     gap: 0.5rem;
+    height: auto;
   }
-
   .thumb {
     width: 110px;
     aspect-ratio: auto;
-    flex: none;
   }
 }
 
-/* Mobile gallery */
+/* Mobile (≤480px) */
 @media (max-width: 480px) {
   .galleryg {
     padding: 2rem 1rem 3rem 1rem;
     flex-direction: column;
-    height: auto;
   }
   .herog {
-    flex: none;
     height: 60vh;
+    max-height: 60vh;
   }
   .thumb-strip {
-    flex: none;
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
-    height: auto;
     padding-right: 0;
+    gap: 0.5rem;
+    height: auto;
   }
   .thumb {
     width: 110px;
     aspect-ratio: auto;
-    flex: none;
   }
 }
+
+/* Desktop (≥1025px) */
+@media (min-width: 1025px) {
+  .galleryg {
+    height: 70vh;
+    max-height: 600px;
+    align-items: stretch;
+  }
+  .herog {
+    flex: 3 1 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  .herog img {
+    height: 100%;
+    max-height: 100%;
+  }
+  .thumb-strip {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
 
 /******** AMENITIES ********/
 #amenities {
