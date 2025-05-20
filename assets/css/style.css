@@ -42,13 +42,31 @@ a {
 }
 
 .button {
-  display: inline-block;
-  padding: 0.9rem 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(0.5rem, 1vw, 1rem)
+           clamp(1.5rem, 3vw, 2.5rem);
+
+  /* font-size now scales between 0.75rem (≈12px) and 1rem (16px) */
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  line-height: 1.2;
+
   font-weight: 600;
-  border-radius: 2px;
-  letter-spacing: 0.05em;
+  letter-spacing: clamp(0.02em, 0.5vw, 0.1em);
+  border-radius: clamp(2px, 0.5vw, 4px);
   transition: background 0.3s ease, color 0.3s ease;
   cursor: pointer;
+
+  width: auto;
+  max-width: 256px;   /* cap width */
+  height: auto;
+  max-height: 48px;   /* cap height */
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .button-gold {
@@ -220,7 +238,7 @@ a {
 header.hero {
   height: 100vh;
   height: 100dvh;
-  background: url("/GrandOceana/images/background.svg") center / cover no-repeat;
+  background: url("/assets/images/background.svg") center / cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -236,6 +254,10 @@ header.hero {
   z-index: 1;
   max-width: 800px;
   padding-inline: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-title {
@@ -269,14 +291,48 @@ header.hero {
 }
 
 .social-list a {
-  font-size: 1.25rem;
-  color: var(--clr-light);
+  position: relative;
+  display: inline-block;
   transition: color 0.25s ease;
 }
 
-.social-list a:hover {
-  color: var(--clr-accent);
+.social-list a img {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.25s ease;
 }
+
+.social-list a::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 100%;          
+  left: 50%;
+  transform: translateX(-50%) translateY(0.1rem);
+  padding: 0.25rem 0.5rem;
+  background: var(--clr-primary);
+  color: var(--clr-light);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  border-radius: 50px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.social-list a:hover {
+  color: var(--clr-accent);   
+}
+
+.social-list a:hover img {
+  transform: scale(1.3);
+}
+
+.social-list a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 
 /* Tablet hero adjustments */
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -329,17 +385,8 @@ header.hero {
 
 .property {
   display: grid;
-  gap: 2.5rem;
-  align-items: start;
-}
-
-@media (min-width: 768px) {
-  .property {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .property:nth-child(even) .property-img {
-    order: -1;
-  }
+  /* gap: 2.5rem; */
+  align-items: center;
 }
 
 .property-img img {
@@ -367,17 +414,6 @@ header.hero {
   font-weight: 700;
 }
 
-.property-desc-wrapper {
-  padding: 1rem 1.25rem;
-  background: var(--clr-light);
-  margin-bottom: 1.25rem;
-}
-
-.property-desc-wrapper p {
-  font-size: 0.95rem;
-  line-height: 1.55;
-}
-
 .underlineProperty {
   display: flex;
   flex-direction: column;
@@ -389,13 +425,26 @@ header.hero {
   width: 200px;
 }
 
+.property-desc-wrapper {
+  padding: 1rem 1.25rem;
+  background: var(--clr-light);
+  margin-bottom: 1.25rem;
+}
 
-/* Mobile properties */
-@media (max-width: 480px) {
+.property-desc-wrapper p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
   .property {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+  }
+  .property-img {
+    display: flex;
+    justify-content: center;
   }
   .property-img img {
     width: 100%;
@@ -405,6 +454,17 @@ header.hero {
     text-align: center;
   }
 }
+
+@media (min-width: 1025px) {
+  .property {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .property:nth-child(even) .property-img {
+    order: -1;
+  }
+}
+
 
 /******** GALLERY ********/
 .galleryFull {
