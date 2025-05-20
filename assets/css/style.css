@@ -488,7 +488,7 @@ header.hero {
 .galleryg {
   display: flex;
   gap: 1rem;
-  padding: 6rem 4rem 8rem 4rem;
+  padding: 4rem 2rem 4rem 2rem;
   background: var(--clr-primary);
   color: #fff;
   max-width: 1200px;
