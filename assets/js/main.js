@@ -23,3 +23,19 @@ function toggleSidebar() {
     sidebar.style.display = 'flex';
   }
 }
+
+/* fade out loader once everything (images, fonts, etc.) is ready */
+/* main.js  (keep this near the bottom) */
+window.addEventListener('load', () => {
+  const loader = document.getElementById('preloader');
+
+  /* 1 000 ms = 1 second.  Adjust to taste. */
+  const MIN_DISPLAY_TIME = 1000;         // e.g. 5 seconds
+
+  /* Allow the CSS wave animation to keep playing
+     even after all assets are ready. */
+  setTimeout(() => {
+    loader.classList.add('hide');        // fades out via CSS
+  }, MIN_DISPLAY_TIME);
+});
+
