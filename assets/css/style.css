@@ -391,7 +391,7 @@ header.hero {
   width: 476px;
   height: 436px;
   max-width: 600px;
-  border-radius: 8px;
+
   object-fit: cover;
   margin: auto;
 }
