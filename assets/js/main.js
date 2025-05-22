@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
   const loader = document.getElementById('preloader');
 
   /* 1 000 ms = 1 second.  Adjust to taste. */
-  const MIN_DISPLAY_TIME = 1000;         // e.g. 5 seconds
+  const MIN_DISPLAY_TIME = 1000;         // e.g. 1 seconds
 
   /* Allow the CSS wave animation to keep playing
      even after all assets are ready. */
