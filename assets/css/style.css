@@ -496,6 +496,25 @@ header.hero {
   gap: 24px;
 }
 
+.gallery-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-button {
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-button:hover,
+.gallery-button:focus {
+  color: var(--clr-accent);
+  transform: scale(1.1);
+}
+
 .subsection h2 {
   font-weight: 700;
   font-size: 40px;
@@ -570,6 +589,10 @@ header.hero {
   transition: border 0.2s ease;
 }
 
+.thumb[hidden] {
+  display: none !important;
+}
+
 .thumb img {
   width: 100%;
   height: 100%;
@@ -579,7 +602,7 @@ header.hero {
 }
 
 .thumb.active {
-  border-color: var(--clr-primary);
+  border-color: var(--clr-accent);
 }
 
 /* Tablet (481px–1024px) */
