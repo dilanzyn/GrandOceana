@@ -496,6 +496,49 @@ header.hero {
   gap: 24px;
 }
 
+.gallery-icon {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-button {
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-button:hover,
+.gallery-button:focus {
+  color: var(--clr-accent);
+  transform: scale(1.1);
+}
+
+.gallery-button::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0.1rem);
+  padding: 0.25rem 0.5rem;
+  background: var(--clr-primary);
+  border: var(--clr-accent) solid 1px;
+  color: var(--clr-accent);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  border-radius: 50px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 20;
+}
+
+.gallery-button:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-15%);
+}
+
 .subsection h2 {
   font-weight: 700;
   font-size: 40px;
