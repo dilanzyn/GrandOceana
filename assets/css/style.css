@@ -613,6 +613,10 @@ header.hero {
   transition: border 0.2s ease;
 }
 
+.thumb[hidden] {
+  display: none !important;
+}
+
 .thumb img {
   width: 100%;
   height: 100%;
@@ -622,7 +626,7 @@ header.hero {
 }
 
 .thumb.active {
-  border-color: var(--clr-primary);
+  border-color: var(--clr-accent);
 }
 
 /* Tablet (481px–1024px) */
