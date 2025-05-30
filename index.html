@@ -17,17 +17,6 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!-- Page-loader -->
-    <div id="preloader" aria-label="Loading">
-    <!-- twin waves -->
-      <div class="ocean">
-        <div class="wave"></div>
-        <div class="wave"></div>
-      </div>
-
-      <img src="./assets/icons/logo.svg" alt="" class="loader-logo" />
-    </div>
-
     <!-- NAVBAR -->
     <nav class="navbar" role="navigation" aria-label="Primary Navigation">
       <ul class="sidebar" id="sidebar">
@@ -94,6 +83,14 @@
 
     <!-- HERO -->
     <header class="hero" id="home" role="banner">
+      <div class="video-background">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/grand_oceana.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+
       <div class="hero-inner">
         <h1 class="hero-title">OCEAN FRONT</h1>
         <h2 class="hero-subtitle">LUXURY REDEFINED</h2>
@@ -156,7 +153,13 @@
               </p>
             </div>
 
-            <a href="#" class="button button-blue">BOOK A STAY</a>
+            <a
+              href="https://www.booking.com/hotel/au/scarborough-shores.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA-IAQGYATG4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AvLu874GwAIB0gIkYjFlNTE1ZTQtMzBkYi00ZWRmLWI5ZGItMDZjN2YxODRlYzlk2AIF4AIB&sid=bfc46dfa65a4e5a9487c44456fcde678&all_sr_blocks=1380952101_410191288_0_0_0&checkin=2025-04-17&checkout=2025-04-24&dest_id=333697&dest_type=city&dist=0&group_adults=10&group_children=0&hapos=1&highlighted_blocks=1380952101_410191288_0_0_0&hpos=1&matching_block_id=1380952101_410191288_0_0_0&no_rooms=5&req_adults=10&req_children=0&room1=A%2CA&room2=A%2CA&room3=A%2CA&room4=A%2CA&room5=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1380952101_410191288_0_0_0__901600&srepoch=1742534702&srpvid=48172616fb450046&type=total&ucfs=1&"
+              class="button button-blue"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BOOK A STAY</a
+            >
           </div>
 
           <div class="property-img queens">
@@ -201,7 +204,13 @@
               </p>
             </div>
 
-            <a href="#" class="button button-blue">BOOK A STAY</a>
+            <a
+              href="https://www.booking.com/hotel/au/the-sands-on-margate-beach.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA-IAQGYATG4ARjIAQzYAQHoAQH4AQKIAgGoAgS4AvLu874GwAIB0gIkYjFlNTE1ZTQtMzBkYi00ZWRmLWI5ZGItMDZjN2YxODRlYzlk2AIF4AIB&sid=a2057c451f4dfed7159c62ae3f67c765&all_sr_blocks=1380975501_410192942_0_0_0&checkin=2025-04-17&checkout=2025-04-24&dist=0&group_adults=10&group_children=0&hapos=1&highlighted_blocks=1380975501_410192942_0_0_0&hpos=1&matching_block_id=1380975501_410192942_0_0_0&no_rooms=5&req_adults=10&req_children=0&room1=A%2CA&room2=A%2CA&room3=A%2CA&room4=A%2CA&room5=A%2CA&sb_price_type=total&sr_order=distance_from_search&sr_pri_blocks=1380975501_410192942_0_0_0__623127&srepoch=1742534549&srpvid=679725c7b5bc0094&type=total&ucfs=1&"
+              class="button button-blue"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BOOK A STAY</a
+            >
           </div>
 
           <div class="property-img">
@@ -243,20 +252,20 @@
 
             <div class="gallery-icon">
               <img src="./assets/icons/small_circle.svg" alt="icon" />
-              <div class="gallery-button" data-label="Queens Beach">
-                <img
-                  data-filter="queens-beach-img"
-                  src="./assets/icons/turtle.svg"
-                  alt="icon"
-                />
+              <div
+                class="gallery-button"
+                data-filter="queens-beach-img"
+                data-label="Queens Beach"
+              >
+                <img src="./assets/icons/turtle.svg" alt="icon" />
               </div>
               <img src="./assets/icons/small_circle.svg" alt="icon" />
-              <div class="gallery-button" data-label="Margate Sands">
-                <img
-                  data-filter="margate-sands-img"
-                  src="./assets/icons/starfish.svg"
-                  alt="icon"
-                />
+              <div
+                class="gallery-button"
+                data-filter="margate-sands-img"
+                data-label="Margate Sands"
+              >
+                <img src="./assets/icons/starfish.svg" alt="icon" />
               </div>
               <img src="./assets/icons/small_circle.svg" alt="icon" />
             </div>
@@ -267,146 +276,202 @@
             <div class="herog">
               <img
                 id="herog-img"
-                src="./assets/images/property/margate_sands/HR1.jpg"
+                src="./assets/images/property/margate_sands/WEB1.jpg"
                 alt="Featured Margate Sands property photo"
               />
             </div>
 
             <!-- THUMBNAILS -->
             <div class="thumb-strip" id="thumb-strip" role="list">
-              <!-- Thumbnails inserted dynamically -->
-              <!-- Example thumbnail -->
-               
-              <!-- 39 Margate Sands thumbnails -->
-            <div class="thumb margate-sands-img active" data-large="./assets/images/property/margate_sands/HR1.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR1.jpg" alt="Margate Sands Thumbnail" />
+              
+            <!-- Margate Sands Thumbnails -->
+            <div class="thumb margate-sands-img active" data-large="./assets/images/property/margate_sands/WEB1.jpg" role="listitem" tabindex="0">
+              <img src="./assets/images/property/margate_sands/WEB1.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR2.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR2.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB2.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB2.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR3.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR3.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB3.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB3.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR4.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR4.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB4.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB4.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR5.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR5.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB5.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB5.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR6.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR6.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB6.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB6.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR7.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR7.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB7.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB7.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR8.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR8.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB8.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB8.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR9.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR9.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB9.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB9.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR10.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR10.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB10.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB10.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR11.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR11.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB11.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB11.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR12.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR12.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB12.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB12.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR13.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR13.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB13.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB13.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR14.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR14.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB14.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB14.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR15.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR15.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB15.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB15.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR16.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR16.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB16.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB16.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR17.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR17.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB17.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB17.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR18.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR18.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB18.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB18.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR19.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR19.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB19.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB19.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR20.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR20.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB20.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB20.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR21.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR21.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB21.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB21.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR22.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR22.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB22.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB22.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR23.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR23.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB23.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB23.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR24.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR24.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB24.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB24.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR25.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR25.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB25.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB25.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR26.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR26.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB26.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB26.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR27.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR27.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB27.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB27.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR28.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR28.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB28.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB28.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR29.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR29.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB29.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB29.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR30.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR30.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB30.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB30.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR31.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR31.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB31.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB31.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR32.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR32.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB32.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB32.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR33.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR33.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB33.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB33.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR34.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR34.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB34.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB34.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR35.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR35.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB35.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB35.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR36.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR36.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB36.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB36.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR37.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR37.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB37.jpg" role="listitem" tabindex="0" >
+              <img src="./assets/images/property/margate_sands/WEB37.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR38.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR38.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB38.jpg" role="listitem" tabindex="0">
+              <img src="./assets/images/property/margate_sands/WEB38.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/HR39.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/margate_sands/HR39.jpg" alt="Margate Sands Thumbnail" />
+            <div class="thumb margate-sands-img" data-large="./assets/images/property/margate_sands/WEB39.jpg" role="listitem" tabindex="0">
+              <img src="./assets/images/property/margate_sands/WEB39.jpg" alt="Margate Sands Thumbnail" />
             </div>
-            <!-- 20 Queens Beach thumbnails -->
 
-            <!-- 3 Queens Beach thumbnails -->
-            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/image_1.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/queens_beach/image_1.jpg" alt="Queens Beach Thumbnail" />
+            <!-- Queens Beach Thumbnails -->
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB1.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB1.jpg" alt="Queens Beach Thumbnail" />
             </div>
-            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/image_2.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/queens_beach/image_2.jpg" alt="Queens Beach Thumbnail" />
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB2.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB2.jpg" alt="Queens Beach Thumbnail" />
             </div>
-            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/image_3.jpg" role="listitem" tabindex="0">
-              <img src="./assets/images/property/queens_beach/image_3.jpg" alt="Queens Beach Thumbnail" />
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB3.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB3.jpg" alt="Queens Beach Thumbnail" />
             </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB4.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB4.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB5.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB5.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB6.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB6.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB7.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB7.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB8.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB8.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB9.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB9.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB10.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB10.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB11.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB11.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB12.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB12.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB13.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB13.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB14.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB14.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB15.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB15.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB16.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB16.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB17.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB17.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB18.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB18.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB19.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB19.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB20.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB20.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB21.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB21.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB22.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB22.jpg" alt="Queens Beach Thumbnail" />
+            </div>
+            <div class="thumb queens-beach-img" data-large="./assets/images/property/queens_beach/WEB23.jpg" role="listitem" tabindex="0" hidden>
+              <img src="./assets/images/property/queens_beach/WEB23.jpg" alt="Queens Beach Thumbnail" />
             </div>
           </div>
         </div>

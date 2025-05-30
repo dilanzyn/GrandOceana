@@ -1,7 +1,7 @@
 /********  Root + Reset  ********/
 :root {
-  --clr-primary: #002366; /* Deep ocean blue */
-  --clr-accent: #c6a964; /* Elegant gold  */
+  --clr-primary: #002366;
+  --clr-accent: #c6a964;
   --clr-light: #ffffff;
   --clr-dark: #000a2e;
   scroll-behavior: smooth;
@@ -45,24 +45,17 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: clamp(0.5rem, 1vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
-
-  /* font-size now scales between 0.75rem (≈12px) and 1rem (16px) */
   font-size: clamp(0.75rem, 1.5vw, 1rem);
   line-height: 1.2;
-
   font-weight: 600;
   letter-spacing: clamp(0.02em, 0.5vw, 0.1em);
-  /* border-radius: clamp(2px, 0.5vw, 4px); */
   transition: background 0.3s ease, color 0.3s ease;
   cursor: pointer;
-
   width: auto;
   max-width: 256px; /* cap width */
   height: auto;
   max-height: 48px; /* cap height */
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
@@ -236,7 +229,7 @@ a {
 header.hero {
   height: 100vh;
   height: 100dvh;
-  background: url("/GrandOceana/assets/images/background.svg") center / cover no-repeat;
+  background: url("../images/background.svg") center / cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -244,12 +237,38 @@ header.hero {
   text-align: center;
   color: var(--clr-light);
   padding: 4rem 2rem;
-  /* border: pink solid 2px; */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay tint */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 24, 55, 0.75);
+  z-index: 1;
 }
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 800px;
   padding-inline: 1.25rem;
   display: flex;
@@ -307,7 +326,7 @@ header.hero {
   left: 50%;
   transform: translateX(-50%) translateY(0.1rem);
   padding: 0.25rem 0.5rem;
-  background: var(--clr-primary);
+  background: rgba(7, 24, 55, 0.5);
   border: var(--clr-accent) solid 1px;
   color: var(--clr-accent);
   font-size: 0.75rem;
@@ -332,7 +351,6 @@ header.hero {
   transform: translateX(-50%) translateY(-15%);
 }
 
-/* Tablet hero adjustments */
 @media (min-width: 481px) and (max-width: 1024px) {
   header.hero {
     height: 100vh;
@@ -402,12 +420,12 @@ header.hero {
   margin-inline: auto;
 }
 
-.queens{
+.queens {
   display: flex;
   justify-content: end;
 }
 
-.margate{
+.margate {
   display: flex;
   justify-content: start;
 }
@@ -421,7 +439,6 @@ header.hero {
   font-size: 1.25rem;
   font-weight: 700;
   color: #002366;
-;
 }
 
 .underlineProperty {
@@ -430,8 +447,6 @@ header.hero {
   align-content: center;
   align-items: center;
 }
-
-
 
 .underlineProperty img {
   width: 200px;
@@ -442,7 +457,6 @@ header.hero {
   background: var(--clr-light);
   margin-bottom: 1.25rem;
   color: #002366;
-;
 }
 
 .property-desc-wrapper p {
@@ -558,7 +572,6 @@ header.hero {
 .herog {
   flex: 3 1 0;
   position: relative;
-  border-radius: 6px;
   overflow: hidden;
   height: 100%;
 }
@@ -609,19 +622,28 @@ header.hero {
   aspect-ratio: 3/2;
   cursor: pointer;
   border: 3px solid transparent;
-  border-radius: 4px;
-  transition: border 0.2s ease;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
 }
 
 .thumb[hidden] {
   display: none !important;
 }
 
+#herog-img {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+#herog-img.fade-out {
+  opacity: 0;
+}
+
 .thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 2px;
   display: block;
 }
 
@@ -740,7 +762,7 @@ header.hero {
   object-fit: contain;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
   margin-bottom: 0.75rem;
-  transition: transform 0.3s ease, filter 0.3s ease; 
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .amenity span {
@@ -752,8 +774,8 @@ header.hero {
 
 .amenity:hover img,
 .amenity:focus-visible img {
-  transform: translateY(-6px) scale(1.1);               /* subtle lift + zoom */
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));      /* a soft glow */
+  transform: translateY(-6px) scale(1.1); /* subtle lift + zoom */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35)); /* a soft glow */
 }
 
 @media (max-width: 480px) {
@@ -783,7 +805,7 @@ header.hero {
   margin: 0 auto;
   padding: 4rem 2rem;
   display: flex;
-  
+
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
@@ -811,7 +833,6 @@ header.hero {
   font-size: clamp(0.95rem, 2.1vw, 1.05rem);
   line-height: 1.6;
   color: #002366;
-
 }
 
 .brand-logo {
@@ -871,8 +892,7 @@ header.hero {
 .cta-card {
   background: #fff;
   width: 265px;
-  height: 265px;
-  padding: 3rem 2rem 10rem ;
+  padding: 3rem 2rem 3rem;
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -916,8 +936,8 @@ header.hero {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #4877A3;;
-  font-size: 0.875rem;;
+  color: #4877a3;
+  font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {
@@ -1008,69 +1028,3 @@ header.hero {
     margin-bottom: 2.25rem;
   }
 }
-
-/* ─── PRELOADER ───────────────────────────────────────────── */
-#preloader {
-  position: fixed;
-  inset: 0;
-  background: var(--clr-primary);            /* deep-ocean blue */
-  display: flex;
-  align-items: flex-end;                     /* waves sit at bottom */
-  justify-content: center;
-  overflow: hidden;
-  z-index: 99999;
-
-  /* fade-out when JS adds .hide */
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-#preloader.hide {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-/* container for both wave layers */
-.ocean {
-  position: relative;
-  width: 100%;
-  height: 16vh;                              /* band height */
-  min-height: 100px;
-  overflow: hidden;
-}
-
-/* single wave strip (two stacked for parallax) */
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200%;                               /* allows smooth scroll */
-  height: 100%;
-
-  /* Inline SVG encoded for CSS validity */
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100'%3E%3Cpath d='M0 50 C 150 100 350 0 600 50 C 850 100 1050 0 1200 50 V100 H0 Z' fill='%23c6a964'/%3E%3C/svg%3E") repeat-x;
-
-  background-size: 50% 100%;
-  animation: waveMove 6s linear infinite;
-  opacity: 0.85;
-}
-
-/* second layer — slower + lower opacity for depth */
-.wave:nth-child(2) {
-  animation-duration: 8s;
-  opacity: 0.55;
-  bottom: 6px;                               /* slight vertical offset */
-}
-
-@keyframes waveMove {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* OPTIONAL: brand mark in the middle*/
-.loader-logo {
-  position: absolute;
-  top: 40%; left: 50%;
-  width: 1000px;            max-width: 28vw;
-  transform: translate(-50%, -50%);
-} 

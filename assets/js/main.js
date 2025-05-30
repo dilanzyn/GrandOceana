@@ -1,63 +1,56 @@
-// main.js
-
-// Gallery thumbnail click handler
+// Grab elements
 const mainImage = document.getElementById("herog-img");
-const thumbnails = Array.from(document.querySelectorAll(".thumb"));
+const thumbs = Array.from(document.querySelectorAll(".thumb"));
 const buttons = Array.from(document.querySelectorAll(".gallery-button"));
 
-// 1) Thumbnail → Main image + active state
-thumbnails.forEach((thumb) => {
-  thumb.addEventListener("click", () => {
-    mainImage.src = thumb.dataset.large;
-    document.querySelector(".thumb.active")?.classList.remove("active");
-    thumb.classList.add("active");
+// Swap main image (with CSS fade-out class)
+function changeMainImage(src) {
+  mainImage.classList.add("fade-out");
+  mainImage.addEventListener("transitionend", function handler(e) {
+    if (e.propertyName !== "opacity") return;
+    mainImage.removeEventListener("transitionend", handler);
+    mainImage.src = src;
+    void mainImage.offsetWidth;
+    mainImage.classList.remove("fade-out");
   });
-});
+}
 
-// 2) Filter function
-function filterThumbnails(categoryClass) {
-  thumbnails.forEach((thumb) => {
-    const shouldShow =
-      categoryClass === "all" || thumb.classList.contains(categoryClass);
-
-    if (shouldShow) {
-      thumb.removeAttribute("hidden");
-    } else {
-      thumb.setAttribute("hidden", "");
-    }
+// Show only thumbs matching `category` (or all if category==="all")
+function filterThumbnails(category) {
+  // hide/show
+  thumbs.forEach((t) => {
+    const keep = category === "all" || t.classList.contains(category);
+    t.hidden = !keep;
+    t.classList.toggle("active", false);
   });
 
-  // If the active thumb got hidden, clear its active state:
-  const active = document.querySelector(".thumb.active");
-  if (active && active.hidden) {
-    active.classList.remove("active");
+  // pick first visible
+  const first = thumbs.find((t) => !t.hidden);
+  if (first) {
+    first.classList.add("active");
+    changeMainImage(first.dataset.large);
   }
 }
 
-// 3) Hook up gallery‑buttons
+// wire up category buttons
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     filterThumbnails(btn.dataset.filter);
+    document.getElementById("thumb-strip").scrollTop = 0;
   });
 });
 
-// show sidebar
+// wire up direct thumbnail clicks
+thumbs.forEach((t) => {
+  t.addEventListener("click", () => {
+    document.querySelector(".thumb.active")?.classList.remove("active");
+    t.classList.add("active");
+    changeMainImage(t.dataset.large);
+  });
+});
+
+// Sidebar (unchanged)
 function toggleSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = sidebar.style.display === "flex" ? "none" : "flex";
 }
-
-/* fade out loader once everything (images, fonts, etc.) is ready */
-/* main.js  (keep this near the bottom) */
-window.addEventListener('load', () => {
-  const loader = document.getElementById('preloader');
-
-  /* 1 000 ms = 1 second.  Adjust to taste. */
-  const MIN_DISPLAY_TIME = 1000;         // e.g. 1 seconds
-
-  /* Allow the CSS wave animation to keep playing
-     even after all assets are ready. */
-  setTimeout(() => {
-    loader.classList.add('hide');        // fades out via CSS
-  }, MIN_DISPLAY_TIME);
-});
