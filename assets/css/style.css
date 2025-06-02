@@ -36,9 +36,13 @@ a {
 
 /********  Global helpers  ********/
 .section {
-  padding: 4rem 1.25rem;
+  padding: 8rem 1.25rem 12rem;
   max-width: 1200px;
   margin-inline: auto;
+}
+
+.section#gallery.section{
+  padding: 8rem 1.25rem 4rem;
 }
 
 .button {
@@ -379,7 +383,7 @@ header.hero {
     min-height: 70vh;
   }
   .hero-title {
-    font-size: clamp(1.5rem, 7vw + 0.3rem, 3rem);
+    font-size: 5.25rem;
     letter-spacing: 1.5px;
   }
   .hero-subtitle {
@@ -388,7 +392,7 @@ header.hero {
   }
   .hero-text {
     font-size: 0.9rem;
-    max-width: 95%;
+    max-width: 80%;
   }
 }
 
@@ -476,7 +480,10 @@ header.hero {
   }
   .property-img img {
     width: 100%;
+    aspect-ratio: 1 / 1;
     height: auto;
+    max-height: 425px;
+    padding: 1rem;
   }
   .property-content {
     text-align: center;
@@ -803,7 +810,7 @@ header.hero {
 .bannerInner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
   display: flex;
 
   justify-content: space-around;
@@ -860,7 +867,7 @@ header.hero {
 /******** CTA ********/
 .cta {
   background: #c49d46;
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
   text-align: center;
   color: #fff;
 }
@@ -949,7 +956,7 @@ header.hero {
 /******** FOOTER ********/
 .site-footer {
   background: var(--clr-primary);
-  padding: 3rem 2rem 4rem;
+  padding: 8rem 2rem;
   text-align: center;
   color: #cfcfcf;
 }
